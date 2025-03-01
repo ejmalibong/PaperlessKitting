@@ -63,12 +63,12 @@ namespace PaperlessKitting
                     model = txtModel.Text.Trim();
                 }
 
-                if (!validator.IsModelValid(model))
-                {
-                    MessageBox.Show("Invalid model.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.ActiveControl = txtModel;
-                    return;
-                }
+                //if (!validator.IsModelValid(model))
+                //{
+                //    MessageBox.Show("Invalid model.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    this.ActiveControl = txtModel;
+                //    return;
+                //}
 
                 string msg = Path.GetFileNameWithoutExtension(directory.DirTemplate(formId));
                 if (!System.IO.Directory.Exists(directory.DirLiveForm(date, formId)))
@@ -158,14 +158,8 @@ namespace PaperlessKitting
             this.Activate();
             this.ActiveControl = txtModel;
 
-            if (!btnCreate.Visible)
-            {
-                this.AcceptButton = btnSearch;
-            }
-            else
-            {
-                this.AcceptButton = btnCreate;
-            }
+            btnCreate.Enabled = false;
+            btnSearch.Enabled = false;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -473,6 +467,32 @@ namespace PaperlessKitting
                     prc.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
                     prc.Start();
                     prc.WaitForExit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtModel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    if (!validator.IsModelValid(txtModel.Text.Trim()))
+                    {
+                        MessageBox.Show("Invalid model.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.ActiveControl = txtModel;
+                        btnCreate.Enabled = false;
+                        btnSearch.Enabled = false;
+                        return;
+                    } else
+                    {
+                        btnCreate.Enabled = true;
+                        btnSearch.Enabled = true;
+                    }
                 }
             }
             catch (Exception ex)

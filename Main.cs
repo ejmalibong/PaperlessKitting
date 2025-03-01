@@ -89,7 +89,7 @@ namespace PaperlessKitting
                 lblLine.Text = Environment.MachineName.ToString().Trim();
             }
 
-            this.ActiveControl = btnLooseParts;
+            this.ActiveControl = dtpDate;
         }
 
         void openFormSearcher(int _formId)

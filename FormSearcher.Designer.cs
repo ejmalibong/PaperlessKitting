@@ -72,6 +72,7 @@ namespace PaperlessKitting
             this.txtModel.Size = new System.Drawing.Size(628, 83);
             this.txtModel.TabIndex = 4;
             this.txtModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtModel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModel_KeyPress);
             // 
             // btnSearch
             // 
@@ -99,9 +100,8 @@ namespace PaperlessKitting
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // frmFormSearcher
+            // FormSearcher
             // 
-            this.AcceptButton = this.btnCreate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -118,7 +118,7 @@ namespace PaperlessKitting
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmFormSearcher";
+            this.Name = "FormSearcher";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmFormSearcher_Load);
