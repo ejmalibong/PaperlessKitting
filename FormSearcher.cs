@@ -63,13 +63,6 @@ namespace PaperlessKitting
                     model = txtModel.Text.Trim();
                 }
 
-                //if (!validator.IsModelValid(model))
-                //{
-                //    MessageBox.Show("Invalid model.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    this.ActiveControl = txtModel;
-                //    return;
-                //}
-
                 string msg = Path.GetFileNameWithoutExtension(directory.DirTemplate(formId));
                 if (!System.IO.Directory.Exists(directory.DirLiveForm(date, formId)))
                 {

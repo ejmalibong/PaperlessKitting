@@ -21,20 +21,22 @@ public class ModelValidator
     public bool IsModelValid(string modelId)
     {
         bool exists = false;
-        string query = "SELECT COUNT(*) FROM TB_M_ITEM WHERE ITEM_ID = @ModelId";
+        //string query = "SELECT COUNT(*) FROM TB_M_ITEM WHERE ITEM_ID = @ModelId";
 
         try
         {
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@ModelId", modelId);
-                    int count = (int)cmd.ExecuteScalar();
-                    exists = count > 0;
-                }
-            }
+            //using (SqlConnection conn = new SqlConnection(_connectionString))
+            //{
+            //    conn.Open();
+            //    using (SqlCommand cmd = new SqlCommand(query, conn))
+            //    {
+            //        cmd.Parameters.AddWithValue("@ModelId", modelId);
+            //        int count = (int)cmd.ExecuteScalar();
+            //        exists = count > 0;
+            //    }
+            //}
+
+            exists = true;
         }
         catch (Exception ex)
         {
