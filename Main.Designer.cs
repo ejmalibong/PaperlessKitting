@@ -42,7 +42,7 @@ namespace PaperlessKitting
             this.btnWireTaping = new System.Windows.Forms.Button();
             this.btnWireTapingPrep = new System.Windows.Forms.Button();
             this.btnCotSlit = new System.Windows.Forms.Button();
-            this.lblApp = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnDor
@@ -58,14 +58,14 @@ namespace PaperlessKitting
             // 
             // lblDate
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(6, 9);
+            this.lblDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(12, 6);
             this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(98, 39);
+            this.lblDate.Size = new System.Drawing.Size(98, 45);
             this.lblDate.TabIndex = 2;
-            this.lblDate.Text = "Date:";
+            this.lblDate.Text = "Date";
             // 
             // dtpDate
             // 
@@ -73,7 +73,7 @@ namespace PaperlessKitting
             this.dtpDate.CustomFormat = "MMMM/dd/yyyy";
             this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(112, 6);
+            this.dtpDate.Location = new System.Drawing.Point(109, 6);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(340, 45);
@@ -185,28 +185,26 @@ namespace PaperlessKitting
             this.btnCotSlit.UseVisualStyleBackColor = true;
             this.btnCotSlit.Click += new System.EventHandler(this.btnCotSlit_Click);
             // 
-            // lblApp
+            // label1
             // 
-            this.lblApp.BackColor = System.Drawing.Color.Blue;
-            this.lblApp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApp.ForeColor = System.Drawing.Color.White;
-            this.lblApp.Location = new System.Drawing.Point(483, 6);
-            this.lblApp.Margin = new System.Windows.Forms.Padding(3);
-            this.lblApp.Name = "lblApp";
-            this.lblApp.Size = new System.Drawing.Size(235, 45);
-            this.lblApp.TabIndex = 13;
-            this.lblApp.Text = "Form Searcher";
-            this.lblApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(457, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 45);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Shift";
             // 
-            // frmMain
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(734, 548);
-            this.Controls.Add(this.lblApp);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.btnLooseParts);
             this.Controls.Add(this.btnWireTaping);
             this.Controls.Add(this.btnWireTapingPrep);
@@ -218,21 +216,19 @@ namespace PaperlessKitting
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnDor);
-            this.Controls.Add(this.lblDate);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.MaximizeBox = false;
-            this.Name = "frmMain";
+            this.Name = "Main";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paperless Kitting";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -250,7 +246,7 @@ namespace PaperlessKitting
         private System.Windows.Forms.Button btnWireTaping;
         private System.Windows.Forms.Button btnWireTapingPrep;
         private System.Windows.Forms.Button btnCotSlit;
-        private System.Windows.Forms.Label lblApp;
+        private System.Windows.Forms.Label label1;
     }
 }
 
